@@ -1,0 +1,94 @@
+/* =======================================
+   NewsCard.css 
+   ======================================= */
+
+.news-card {
+    background-color: var(--background-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.news-Top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px 15px 0 15px;
+}
+
+.news-title h1 {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin: 0;
+    /* Limita o título a duas linhas */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.button-like {
+    flex-shrink: 0;
+    margin-left: 10px;
+}
+
+.favorite-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--secondary-color);
+    transition: color 0.2s ease, transform 0.1s ease;
+    line-height: 1; /* Alinha o ícone corretamente */
+    padding: 0;
+}
+
+.favorite-btn:hover {
+    color: var(--like-color); /* Vermelho ao passar o mouse */
+    transform: scale(1.1);
+}
+
+.news-image img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens */
+    object-fit: cover;
+    display: block;
+    background-color: var(--background-light); /* Fundo temporário para "error image" */
+}
+
+.news-content {
+    padding: 15px;
+}
+
+.news-content p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    /* Limita o conteúdo a três linhas */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.news-author {
+    padding: 0 15px 15px;
+    border-top: 1px solid var(--border-color);
+    margin-top: auto; /* Empurra para o fundo do card */
+}
+
+.news-author p {
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+    font-style: italic;
+    margin: 0;
+}
