@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import NewsCard from "../../components/NewsCard"
 import '../../css/Home.css'
 import {getAllNews} from '../../api/newsApi'
-  
+
 function Home(){
     const [searchQuery, setSearchQuery] = useState("")
     const [news, setNews] = useState([])

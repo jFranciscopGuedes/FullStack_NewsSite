@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import logo from "../assets/news.jpg"
 import "../css/NavBar.css";
 
 function NavBar() {
@@ -14,7 +15,7 @@ function NavBar() {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <Link to="/">NEWS</Link>
+        <Link to="/"><img src={logo} alt="NEWS Logo" className="navbar-logo" /></Link>
       </div>
       <div className="navbar-links">
         <Link to="/" className="nav-bar-link">Home</Link>

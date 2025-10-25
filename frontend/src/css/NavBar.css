@@ -1,5 +1,4 @@
-/* src/css/NavBar.css */
-
+/* Navbar fixa no topo */
 .navbar {
   position: fixed;
   top: 0;
@@ -13,8 +12,10 @@
   color: white;
   padding: 0 24px;
   z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
+/* Links gerais */
 .navbar a {
   color: white;
   text-decoration: none;
@@ -24,18 +25,25 @@
   color: #00bcd4;
 }
 
+/* Logo da marca */
 .navbar-brand a {
-  font-size: 1.5rem;
-  font-weight: bold;
-  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
 }
 
+.navbar-logo {
+  height: 40px; /* altura do logo */
+  width: auto;
+}
+
+/* Container de links */
 .navbar-links {
   display: flex;
   gap: 16px;
   align-items: center;
 }
 
+/* Links do navbar e botão logout */
 .nav-bar-link {
   background: none;
   border: none;
@@ -49,8 +57,34 @@
   text-decoration: underline;
 }
 
-/* empurra o conteúdo da página para baixo */
+.nav-bar-link button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Empurra o conteúdo da página para baixo para não ficar escondido atrás da navbar */
 body {
   margin: 0;
   padding-top: 60px;
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 16px;
+  }
+  .navbar-links {
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .navbar-logo {
+    height: 35px; /* logo menor em mobile */
+  }
 }
