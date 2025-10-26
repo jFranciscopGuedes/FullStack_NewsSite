@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getNewsById, updateNews, deleteNews } from "../../api/newsApi";
 import { getAllCategories } from "../../api/categoryApi";
 import { useAuth } from "../../context/AuthContext";
+import "../../css/EditNewsPage.css";
 
 function EditNewsPage() {
   const { id } = useParams();
@@ -59,7 +60,7 @@ function EditNewsPage() {
   if (!news) return <p>A carregar...</p>;
 
   return (
-    <div className="p-4">
+    <div className="form-container">
       <h1>Editar Notícia</h1>
       <form onSubmit={handleUpdate}>
         <input
@@ -93,9 +94,13 @@ function EditNewsPage() {
           ))}
         </select>
 
-        <div style={{ marginTop: "10px" }}>
+        <div className="button-group">
           <button type="submit">Guardar</button>
-          <button type="button" onClick={handleDelete} style={{ marginLeft: "10px" }}>
+          <button
+            type="button"
+            onClick={handleDelete}
+            className="delete-button"
+          >
             Eliminar
           </button>
         </div>

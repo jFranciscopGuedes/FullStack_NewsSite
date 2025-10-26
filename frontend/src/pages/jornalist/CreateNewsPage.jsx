@@ -3,6 +3,7 @@ import { createNews } from "../../api/newsApi";
 import { getAllCategories } from "../../api/categoryApi";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import "../../css/CreateNewsPage.css";
 
 function CreateNewsPage() {
   const [title, setTitle] = useState("");

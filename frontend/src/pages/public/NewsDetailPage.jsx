@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Api from "../../api/Api";
+import "../../css/NewsDetailPage.css";
 
 function NewsDetailPage() {
   const { id } = useParams();
@@ -24,8 +25,8 @@ function NewsDetailPage() {
     fetchNews();
   }, [id]);
 
-  if (loading) return <p>Carregando notícia...</p>;
-  if (error) return <p>{error}</p>;
+  if (loading) return <p className="news-detail-page-message">Carregando notícia...</p>;
+  if (error) return <p className="news-detail-page-message">{error}</p>;
   if (!news) return null;
 
   return (
@@ -35,9 +36,16 @@ function NewsDetailPage() {
       <p className="news-content">{news.content}</p>
 
       <div className="news-meta">
-        <p><strong>Autor:</strong> {news.authorName}</p>
-        <p><strong>Categoria:</strong> {news.categoryName}</p>
-        <p><strong>Publicado em:</strong> {new Date(news.publishedAt).toLocaleString()}</p>
+        <p>
+          <strong>Autor:</strong> {news.authorName}
+        </p>
+        <p>
+          <strong>Categoria:</strong> {news.categoryName}
+        </p>
+        <p>
+          <strong>Publicado em:</strong>{" "}
+          {new Date(news.publishedAt).toLocaleString()}
+        </p>
       </div>
     </div>
   );

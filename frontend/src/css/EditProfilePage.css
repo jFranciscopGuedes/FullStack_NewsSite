@@ -1,0 +1,121 @@
+/* EditProfilePage.css */
+
+.edit-profile {
+    max-width: 500px;
+    margin: 40px auto; /* Centraliza e adiciona espaço */
+    padding: 30px;
+    background-color: #ffffff; /* Fundo branco */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+}
+
+.edit-profile h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+/* Estilos para Mensagens */
+.edit-profile .success {
+    color: #28a745; /* Verde para sucesso */
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.edit-profile .error {
+    color: #dc3545; /* Vermelho para erro */
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Estilo do Formulário */
+.edit-profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaço entre os elementos */
+    margin-bottom: 20px; /* Espaço antes do botão Apagar Conta */
+}
+
+/* Estilo para Labels */
+.edit-profile label {
+    font-weight: 600;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Estilo para Inputs (consistente com AdminForm) */
+.edit-profile input[type="text"],
+.edit-profile input[type="email"],
+.edit-profile input[type="password"] {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+}
+
+.edit-profile input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+/* Botão de Atualizar Perfil */
+.update-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    cursor: pointer;
+    background-color: #007bff; /* Azul primário */
+    color: white;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.update-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Botão de Apagar Conta (separado) */
+.delete-btn {
+    display: block; /* Ocupa a largura total */
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #dc3545; /* Vermelho para alerta/eliminação */
+    color: white;
+    font-weight: bold;
+    margin-top: 30px; /* Grande espaço para separação */
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+    opacity: 0.9;
+}
+
+/* Estilos responsivos */
+@media (max-width: 550px) {
+    .edit-profile {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+}

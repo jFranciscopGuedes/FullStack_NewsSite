@@ -1,0 +1,125 @@
+/* MyNewsPage.css */
+
+.my-news-page-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+}
+
+.my-news-page-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 2.2em;
+    font-weight: 600;
+}
+
+.create-news-link {
+    display: inline-block; /* Permite padding e margem vertical */
+    background-color: #007bff; /* Azul para o botão de criar */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 30px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.create-news-link:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.my-news-list {
+    list-style: none; /* Remove os marcadores padrão da lista */
+    padding: 0;
+}
+
+.my-news-list li {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column; /* Elementos empilhados */
+    justify-content: space-between;
+    align-items: flex-start; /* Alinha o texto à esquerda */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.my-news-list li strong {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.my-news-list li span { /* Para a categoria se ela for um span */
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.my-news-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px; /* Espaço entre os botões de ação */
+}
+
+.my-news-actions .edit-link,
+.my-news-actions .delete-button {
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.my-news-actions .edit-link {
+    background-color: #ffc107; /* Amarelo para editar */
+    color: #333;
+}
+
+.my-news-actions .edit-link:hover {
+    background-color: #e0a800;
+}
+
+.my-news-actions .delete-button {
+    background-color: #dc3545; /* Vermelho para eliminar */
+    color: white;
+}
+
+.my-news-actions .delete-button:hover {
+    background-color: #c82333;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .my-news-page-container {
+        margin: 20px;
+        padding: 20px;
+    }
+    .my-news-page-container h1 {
+        font-size: 2em;
+    }
+    .my-news-list li {
+        padding: 12px 15px;
+    }
+    .my-news-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .my-news-actions .edit-link,
+    .my-news-actions .delete-button {
+        width: 100%; /* Botões de ação em largura total */
+        text-align: center;
+    }
+}

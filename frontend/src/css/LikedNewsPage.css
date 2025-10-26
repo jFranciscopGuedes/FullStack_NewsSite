@@ -1,0 +1,53 @@
+/* LikedNewsPage.css */
+
+.liked-news-page {
+    max-width: 1200px;
+    margin: 40px auto; /* Centraliza o conteúdo */
+    padding: 20px;
+}
+
+.liked-news-page h2 {
+    text-align: center;
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #d2b48c; /* Cor de realce a condizer com o fundo */
+    padding-bottom: 10px;
+}
+
+/* Estilos de Grelha (Reutilizados do Home.css) */
+.news-grid {
+    display: grid;
+    /* 3 notícias por linha */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+}
+
+/* Mensagens de estado (Carregando, Erro, Vazio) */
+.liked-news-page > div { /* Aplica-se às divs que não são o news-grid */
+    text-align: center;
+    font-size: 1.2em;
+    margin: 50px 0;
+    color: #555;
+}
+
+.liked-news-page > div[style] { /* Estilo específico para a mensagem de erro */
+    color: #dc3545 !important;
+    font-weight: bold;
+}
+
+/* Estilos responsivos para a grelha (os mesmos do Home.css) */
+@media (max-width: 1024px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .liked-news-page {
+        margin: 20px;
+    }
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+}

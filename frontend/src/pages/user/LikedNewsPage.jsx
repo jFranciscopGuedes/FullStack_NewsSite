@@ -1,6 +1,6 @@
 import { useLikedNews } from "../../context/LikedNewsContext";
 import NewsCard from "../../components/NewsCard";
-import "../../css/Home.css";
+import "../../css/LikedNewsPage.css";
 
 function LikedNewsPage() {
   const { likedNews, loading, error } = useLikedNews();

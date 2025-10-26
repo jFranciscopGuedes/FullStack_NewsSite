@@ -1,0 +1,108 @@
+/* NewsDetailPage.css */
+
+.news-detail {
+    max-width: 900px; /* Largura máxima para o conteúdo da notícia */
+    margin: 40px auto; /* Centraliza a div e adiciona margem vertical */
+    padding: 30px;
+    background-color: #ffffff; /* Fundo branco para o bloco da notícia */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border: 1px solid #e0e0e0; /* Borda leve */
+    line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
+    color: #333; /* Cor de texto principal */
+}
+
+/* Título da Notícia */
+.news-detail h1 {
+    font-size: 2.8em;
+    color: #222;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Imagem da Notícia */
+.news-detail-image {
+    width: 100%; /* Ocupa a largura total do container */
+    max-height: 500px; /* Altura máxima para a imagem */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    border-radius: 8px; /* Cantos arredondados */
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra para a imagem */
+}
+
+/* Conteúdo da Notícia */
+.news-content {
+    font-size: 1.15em;
+    margin-bottom: 30px;
+    text-align: justify; /* Justifica o texto para um visual de revista */
+    padding: 0 10px; /* Pequeno padding para afastar das bordas */
+}
+
+/* Metadados (Autor, Categoria, Data) */
+.news-meta {
+    border-top: 1px solid #eee; /* Linha separadora */
+    padding-top: 20px;
+    margin-top: 30px;
+    font-size: 0.95em;
+    color: #666;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a linha seguinte */
+    justify-content: space-around; /* Distribui o espaço entre os itens */
+    gap: 15px; /* Espaço entre os parágrafos de metadados */
+    text-align: center;
+}
+
+.news-meta p {
+    margin: 0; /* Remove margem padrão dos parágrafos */
+    flex: 1 1 auto; /* Permite que os parágrafos cresçam e encolham */
+    min-width: 150px; /* Largura mínima para cada item de metadados */
+}
+
+.news-meta strong {
+    color: #444; /* Cor mais escura para as labels */
+}
+
+/* Mensagens de Carregamento/Erro */
+.news-detail-page-message { /* Uma nova classe que pode usar para <p>Carregando...</p> */
+    text-align: center;
+    font-size: 1.3em;
+    color: #555;
+    margin-top: 50px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .news-detail {
+        margin: 20px;
+        padding: 20px;
+    }
+    .news-detail h1 {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+    .news-detail-image {
+        max-height: 300px;
+        margin-bottom: 20px;
+    }
+    .news-content {
+        font-size: 1em;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+    .news-meta {
+        flex-direction: column; /* Metadados empilhados em telas pequenas */
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .news-detail h1 {
+        font-size: 1.6em;
+    }
+    .news-detail-image {
+        max-height: 200px;
+    }
+}

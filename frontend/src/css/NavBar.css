@@ -8,21 +8,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #111;
+  background: linear-gradient(90deg, #111, #222);
   color: white;
   padding: 0 24px;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-}
-
-/* Links gerais */
-.navbar a {
-  color: white;
-  text-decoration: none;
-}
-
-.navbar a:hover {
-  color: #00bcd4;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
 }
 
 /* Logo da marca */
@@ -32,8 +23,14 @@
 }
 
 .navbar-logo {
-  height: 40px; /* altura do logo */
+  height: 40px;
   width: auto;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
 }
 
 /* Container de links */
@@ -41,6 +38,7 @@
   display: flex;
   gap: 16px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 /* Links do navbar e botão logout */
@@ -50,10 +48,12 @@
   color: white;
   font-size: 1rem;
   cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
 }
 
 .nav-bar-link:hover {
   color: #00bcd4;
+  transform: translateY(-2px);
   text-decoration: underline;
 }
 
@@ -80,11 +80,10 @@ body {
     padding: 10px 16px;
   }
   .navbar-links {
-    flex-wrap: wrap;
     gap: 10px;
     margin-top: 8px;
   }
   .navbar-logo {
-    height: 35px; /* logo menor em mobile */
+    height: 35px;
   }
 }
