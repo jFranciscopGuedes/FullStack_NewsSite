@@ -4,34 +4,55 @@ from models import db, News
 
 news_bp = Blueprint("news",__name__)
 
-#Ver todas as noticias
+# Rota para VER TODAS as notícias
 @news_bp.route('/', methods=['GET'])
 def get_all_news():
+    # Lê o parâmetro "search" enviado na URL (ex: /news?search=portugal)
     search = request.args.get("search")
+
+    # Se o utilizador pesquisou algo, filtra as notícias cujo título contenha esse texto (case-insensitive)
     if search:
         all_news = News.query.filter(News.title.ilike(f"%{search}%")).all()
+    # Caso contrário, devolve todas as notícias existentes
     else:
         all_news = News.query.all()
+
+    # Retorna todas as notícias em formato JSON + status 200 (OK)
     return jsonify([n.to_json() for n in all_news]), 200
 
 
-#Filtrar noticia
+# Rota para VER UMA notícia específica (filtra por ID)
 @news_bp.route('/<int:news_id>', methods=['GET'])
 def get_news(news_id):
+    # Procura a notícia com o ID fornecido
     news = News.query.get(news_id)
+
+    # Se não encontrar, devolve erro 404
     if not news:
         return jsonify({"error": "Noticia nao encontrada"}), 404
-    return jsonify(news.to_json()),200
+
+    # Se existir, retorna a notícia em JSON + status 200
+    return jsonify(news.to_json()), 200
 
 
+# Rota para VER APENAS as notícias criadas pelo utilizador autenticado
 @news_bp.route('/my-news', methods=['GET'])
-@jwt_required()
+@jwt_required()  # Requer token JWT válido (utilizador autenticado)
 def get_my_news():
+    # Obtém o ID do utilizador atual a partir do token JWT
     user_id = int(get_jwt_identity())
+
+    # Obtém as claims adicionais (como a role) do token JWT
     claims = get_jwt()
+
+    # Verifica se o utilizador tem permissão (apenas "jornalista" pode listar as suas próprias notícias)
     if claims["role"] != "jornalista":
         return jsonify({"error": "Acesso negado"}), 403
+
+    # Filtra as notícias criadas por este utilizador (pelo author_id)
     my_news = News.query.filter_by(author_id=user_id).all()
+
+    # Retorna as notícias em JSON + status 200 (OK)
     return jsonify([n.to_json() for n in my_news]), 200
 
 
@@ -72,7 +93,7 @@ def create_news():
 
     return jsonify({"message": "Noticia Criada"}), 201
 
-
+ 
 #Atualizar a noticia(somente jornalistas)
 @news_bp.route('/update/<int:news_id>', methods=['PUT'])
 @jwt_required()

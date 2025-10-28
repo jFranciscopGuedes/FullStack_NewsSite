@@ -26,7 +26,7 @@ def register_user():
 
 @auth_users_bp.route('/login', methods=['POST'])
 def login():
-    data = request.json
+    data = request.json # Extrai o corpo JSON enviado pelo frontend (contém email e password)
 
     #Procurar na tbl o primeiro user com o email passado
     user = Users.query.filter_by(email=data['email']).first()

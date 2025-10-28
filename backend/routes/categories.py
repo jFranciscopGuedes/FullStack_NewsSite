@@ -9,6 +9,7 @@ def get_all_categories():
     categories = Category.query.all()
     return jsonify([c.to_json() for c in categories])
 
+
 @category_bp.route('/', methods=['POST'])
 @jwt_required()
 def create_category():
